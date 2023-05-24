@@ -42,7 +42,7 @@ var twoSum = function (nums, target) {
     i = 1
 */
 
-const input = [2, 7, 11, 15];
+const input = [2, 11, 7, 15];
 console.log(twoSum(input, 9));
 const input2 = [3, 2, 4];
 console.log(twoSum(input2, 6));
