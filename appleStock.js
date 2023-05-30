@@ -44,11 +44,3 @@ var maxProfit = function (prices) {
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 console.log(maxProfit([7, 6, 4, 3, 1]));
-
-/*
-min = 1
-max = 0
-result = 0 
-i = 2
-
-*/
