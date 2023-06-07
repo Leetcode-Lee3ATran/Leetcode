@@ -22,11 +22,11 @@ interface TreeNode {
   right: TreeNode;
 }
 
-function TreeNode(val:number, left?:TreeNode, right?:TreeNode):void {
-    this.val = (val===undefined ? 0 : val);
-    this.left = (left===undefined ? null : left);
-    this.right = (right===undefined ? null : right);
-}
+// function TreeNode(val:number, left?:TreeNode, right?:TreeNode):void {
+//     this.val = (val===undefined ? 0 : val);
+//     this.left = (left===undefined ? null : left);
+//     this.right = (right===undefined ? null : right);
+// }
 
 const invertTree = function (root:TreeNode):TreeNode | null {
   // if root is null, return null
