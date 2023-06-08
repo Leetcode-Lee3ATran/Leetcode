@@ -35,37 +35,40 @@ const isBalanced = function(root) {
     // get the height of the left side and then the height of the right side
     // if the difference of left and right is greater than 1, return false
     // otherwise return true
-    const leftHeight = height(root.left);
-    const rightHeight = height(root.right);
-    if (Math.abs(leftHeight - rightHeight) > 1) return false;
-    return true;
+      const leftHeight = height(root.left);
+      console.log(leftHeight)
+      const rightHeight = height(root.right);
+      console.log(rightHeight)
+      if (Math.abs(leftHeight - rightHeight) > 1) return false;
+      if (!isBalanced(root.left) || !isBalanced(root.right)) return false;
+      return true;
 };
 
 const BST = new TreeNode(1);
 const left = new TreeNode(2);
 const right = new TreeNode(2);
 const leftLeft = new TreeNode(3);
-const leftRight = new TreeNode(3);
+const rightRight = new TreeNode(3);
 const leftLeftLeft = new TreeNode(4)
-const leftLeftRight = new TreeNode(4)
+const rightRightRight = new TreeNode(4)
 BST.left = left;
 BST.right = right;
 BST.left.left = leftLeft;
-BST.left.right = leftRight;
+BST.right.right = rightRight;
 BST.left.left.left = leftLeftLeft;
-BST.left.left.right = leftLeftRight;
+BST.right.right.right = rightRightRight;
 
 console.log(isBalanced(BST));
 
 
 
 /* 
-      5
-    /  \ 
-   3    8 
+        5
+      /  \ 
+     3    8 
+   /
+  2
  /
-2
-/
 1
 
     1
@@ -74,11 +77,13 @@ console.log(isBalanced(BST));
        \ 
         3
 
-      5
-    /  \
-   3    8
- /  \  /  \
-2    nn    11
-            \
-             13
+
+         1
+      /    \
+     2      2
+   /  \    /  \
+  3    n  n    3
+ / \         /   \
+4   n       n     4
+
 */
