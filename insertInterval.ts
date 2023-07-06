@@ -34,10 +34,11 @@ function insert(intervals: number[][], newInterval: number[]): number[][] {
       if (newInterval[0] < intervals[0][0]) intervals.unshift(newInterval);
       // if second num of current interval is greater than or equal to first num of newInterval OR 
       // if second num of newInterval is less than first num of next interval
-      // ex. [3, 5] and [1, 2] vs. [4, 8] and []
+      // ex. [3, 5] and [1, 2] vs. [6, 6] and [12, 15]
       if (intervals[i][1] >= newInterval[0] || newInterval[1] < intervals[i + 1][0]) {
+        // splice at next index
         intervals.splice(i + 1, 0, newInterval);
-        console.log(intervals);
+        // merge intervals and remove unneeded intervals (y)
         while (intervals[i + 1] && intervals[i][1] >= intervals[i + 1][0]) {
           intervals[i][0] = Math.min(intervals[i][0], intervals[i + 1][0]);
           intervals[i][1] = Math.max(intervals[i][1], intervals[i + 1][1]);
