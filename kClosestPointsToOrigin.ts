@@ -31,7 +31,6 @@ function kClosest(points: number[][], k: number): number[][] {
   };
   // sort Object.entries of cache
   const result = Object.entries(cache).sort((a, b) => Number(a[1]) - Number(b[1]));
-  console.log(result);
   // declare a results array
   let results: number[][] = [];
   // push points from first k elements into results
@@ -40,6 +39,8 @@ function kClosest(points: number[][], k: number): number[][] {
   }
   return results;
 }
+
+// O(n) + O(nlog(n)) + O(k)
 
 // console.log(kClosest([[1,3],[-2,2]], 1));
 // console.log(kClosest([[3,3],[5,-1],[-2,4]], 2))
